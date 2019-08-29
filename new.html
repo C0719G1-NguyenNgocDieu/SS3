@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="setInterval(auto)">
+<img id="nobita" src="1.png" style="position: absolute; left: 0px; top: 0px; width: 300px; height: 300px"/>
+<script>
+    function auto() {
+        {
+
+            let maxWidth = window.innerWidth;
+            let maxHeight = window.innerHeight;
+            let le = parseInt(document.getElementById('nobita').style.left);
+            let hi = parseInt(document.getElementById('nobita').style.top);
+            if (le < maxWidth-300) {
+                moveRight();
+            } else if (hi <maxHeight-300) {
+                moveDown();
+            } else if (le=maxWidth-300&&hi=maxHeight-300) {
+                moveLeft();
+            } else
+                moveUp();
+        }
+
+        function moveRight() {
+            let rig = document.getElementById('nobita');
+            rig.style.left = parseInt(rig.style.left) + 10 + 'px';
+        }
+
+        function moveDown() {
+            let dow = document.getElementById('nobita');
+            dow.style.top = parseInt(dow.style.top) + 10 + 'px';
+        }
+
+        function moveLeft() {
+            let lef = document.getElementById('nobita');
+            lef.style.left = parseInt(lef.style.left) - 10 + 'px';
+        }
+
+        function moveUp() {
+            let up = document.getElementById('nobita');
+            up.style.top = parseInt(up.style.top) - 10 + 'px';
+
+        }
+    }
+</script>
+</body>
